@@ -150,12 +150,23 @@ public class Shortcut {
 
   //-------------------------------------------------------------
   // Returns true if this shortcut matches the given match values
-  public bool matches_keypress( bool control, bool shift, bool alt, uint[] kvs, MapState state ) {
+  public bool matches_keypress( bool control, bool shift, bool alt, uint keyval, uint[] kvs, MapState state ) {
+    var match = false;
+    if( _keycode >= 0xff00 && _keycode <= 0xffff ) {
+      var event_keyval = keyval;
+      if( event_keyval == Key.ISO_Left_Tab ) {
+        event_keyval = Key.Tab;
+      }
+      match = (event_keyval == _keycode);
+    } else {
+      match = has_key( kvs );
+    }
+
     return(
       (_control == control) &&
       (_shift   == shift)   &&
       (_alt     == alt)     &&
-      has_key( kvs )        &&
+      match                 &&
       MapState.matches( state, _command )
     );
   }
@@ -386,7 +397,7 @@ public class Shortcuts {
     Display.get_default().map_keycode( keycode, out ks, out kvs );
 
     for( int i=0; i<_shortcuts.length; i++ ) {
-      if( _shortcuts.index( i ).matches_keypress( control, shift, alt, kvs, state ) ) {
+      if( _shortcuts.index( i ).matches_keypress( control, shift, alt, keyval, kvs, state ) ) {
         _shortcuts.index( i ).execute( map );
         return( true );
       }
