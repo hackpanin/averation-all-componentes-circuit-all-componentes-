@@ -49,6 +49,8 @@ public class Minder : Gtk.Application {
     Intl.bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
     Intl.textdomain( GETTEXT_PACKAGE );
 
+    Environment.set_application_name ( "Minder" );
+
     startup.connect( start_application );
     command_line.connect( handle_command_line );
 
