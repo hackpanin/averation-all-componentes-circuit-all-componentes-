@@ -1,0 +1,9 @@
+With NetworkManager, nmcli scans, connects, and even reveals the password of the current network.
+nmcli device wifi list
+nmcli device wifi connect [SSID] password [password]
+nmcli device wifi show-password
+Stored Wi-Fi passwords live in NetworkManager's connection files (root required).
+sudo grep -r "psk=" /etc/NetworkManager/system-connections/
+On systems using iwd instead of NetworkManager, use iwctl.
+iwctl station wlan0 get-networks
+iwctl station wlan0 connect
