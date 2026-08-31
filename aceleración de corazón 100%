@@ -1,6 +1,73 @@
  atack  heart prediccion cardiac letallprediccion aceleración const int SENSOR_PIN = A1;
+7:41
 
-double alpha = 0.75;
+kB/s
+
+HD45HD
+
+45 55
+
+RF Enlace
+
+Parámetros de propagación
+
+Coordenadas TX
+
+33.837390, 75.020371
+
+Ubicación del transmisor (lat, lon)
+
+Coordenadas RX
+
+33.912987, 74.984316
+
+Ubicación del receptor (lat, lon)
+
+Altura TX (m)
+
+Altura RX (m)
+
+15.0
+
+15.0
+
+Frecuencia (MHz)
+
+1500.0
+
+Muestreo del terreno
+
+Medio (Rec...
+
+20-20000 MHz
+
+Opciones avanzadas
+
+Cálculos de EIRP, RSSI, SNR, Margen
+
+Parámetros TX
+
+Potencia (dBm)
+
+30.0
+
+Parámetros RX
+
+Sensibilidad (d...
+
+-90.0
+
+Ganancia ante...
+
+Ganancia ante...
+
+Entrada
+
+Mapa
+
+Cobertura
+
+Resultados
 double oldValue = 0.0;
 
 void setup() {
