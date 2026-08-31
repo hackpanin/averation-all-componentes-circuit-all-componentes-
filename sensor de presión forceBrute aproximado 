@@ -1,0 +1,22 @@
+const int SENSOR_PIN = A0;
+
+void setup() {
+   Serial.begin(9600);
+}
+
+void loop() {
+   // Leer valor analógico crudo (0-1023)
+   int rawValue = analogRead(SENSOR_PIN);
+
+   // Convertir valor crudo a voltaje en voltios
+   float voltage = rawValue * (5.0 / 1023.0);
+
+   // Convertir voltaje a milivoltios para mostrar
+   float voltage_mV = voltage * 1000;
+
+   // Imprimir resultados
+   Serial.print("Voltage: ");
+   Serial.println(voltage_mV);
+
+   delay(500); // esperar 500 ms
+}
