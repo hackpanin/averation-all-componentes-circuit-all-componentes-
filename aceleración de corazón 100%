@@ -1,4 +1,4 @@
-prediccion aceleración const int SENSOR_PIN = A1;
+ atack  heart prediccion cardiac letallprediccion aceleración const int SENSOR_PIN = A1;
 
 double alpha = 0.75;
 double oldValue = 0.0;
